@@ -7,7 +7,8 @@
 "   ░░██   ░██ ███ ░██ ░██░███   ░░█████
 "    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
 "
-" Config for Neovim, by Max Storr
+" Config for Neovim
+" Author: Max Storr
 " Date: 11.04.2019
 
 " Plugins {{{
@@ -49,9 +50,16 @@ nnoremap <tab> za
 inoremap ;; <Esc>/<++><Enter>"_c4l
 vnoremap ;; <Esc>/<++><Enter>"_c4l
 map ;; <Esc>/<++><Enter>"_c4l
+
+"" Better indendation of code blocks.
+vnoremap < <gv
+vnoremap > >gv
+
+" jk is easier to reach than esc.
+inoremap jk <esc>
 " }}}
 
-" UI Config {{{
+" UI Settings {{{
 "" Dynamic number lines.
 set number
 set relativenumber
@@ -64,11 +72,13 @@ syntax on
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
+"" Misc.
 set lazyredraw
 set nowrap
 set colorcolumn=80
 set noerrorbells
 set showmatch
+set encoding=utf-8
 " }}}
 
 " Misc. Settings {{{
@@ -82,34 +92,38 @@ set shiftwidth=4        " Size of an indent.
 set expandtab           " Tab button types spaces.
 
 "" Fold settings.
-set foldmethod=syntax   " Fold on indent.  
+set foldmethod=syntax
 set foldlevel=3         " Fold any blocks deeper than 3 indents.
 
-set conceallevel=2    " Conceal useful for markdown/latex notes.
+set conceallevel=2      " Conceal useful for markdown/latex notes.
 " }}}
 
 " Netrw Settings {{{
 "" This is Vim's built-in file explorer.
-let g:netrw_banner = 0  " Hide the banner in netrw file explorer.
+let g:netrw_banner = 0          " Hide the banner in netrw file explorer.
 let g:netrw_liststyle = 3
-let g:netrw_winsize = 15
+let g:netrw_winsize = 15        " Netrw takes up 15% of the current split.
+let g:netrw_browse_split = 2    " Opened files go to new vertical split.
 "}}}
 
-" Latex Code Snippets {{{
-augroup latex_snippets
-    autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i
-    \ inoremap ;bf \textbf{}<++><Esc>T{i|
-    \ inoremap ;it \textit{}<++><Esc>T{i|
-    \ inoremap ;ct \textcite{}<++><Esc>T{i|
-    \ inoremap ;cc \cite{}<++><Esc>T{i|
-    \ inoremap ;cp \parencite{}<++><Esc>T{i|
-    \ inoremap ;ref \ref{}<++><Esc>T{i|
-    \ inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i|
-    \ inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i|
-    \ inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i|
-    \ inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0/DELRN<Enter>cgn|
-    \ inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>|
-    \ inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
+" Tex File Autocommands {{{
+augroup latex_code_snippets
+    autocmd!
+    autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i|
+        \ inoremap ;bf \textbf{}<++><Esc>T{i|
+        \ inoremap ;it \textit{}<++><Esc>T{i|
+        \ inoremap ;ct \textcite{}<++><Esc>T{i|
+        \ inoremap ;cc \cite{}<++><Esc>T{i|
+        \ inoremap ;cp \parencite{}<++><Esc>T{i|
+        \ inoremap ;ref \ref{}<++><Esc>T{i|
+        \ inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i|
+        \ inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i|
+        \ inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i|
+        \ inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0/DELRN<Enter>cgn|
+        \ inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>|
+        \ inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>|
+        \ set spell|
+        \ set wrap
 augroup END
 " }}}
 
