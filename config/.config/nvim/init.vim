@@ -129,7 +129,7 @@ augroup latex_code_snippets
         \ inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>|
         \ inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>|
         \ set spell|
-        \ set wrap
+        \ set wrap|
         \ set spell
 augroup END
 " }}}
