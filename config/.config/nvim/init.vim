@@ -40,10 +40,12 @@ nnoremap <C-J> <C-W><C-j>
 nnoremap <C-K> <C-W><C-k>
 nnoremap <C-L> <C-W><C-l>
 nnoremap <C-H> <C-W><C-h>
-"" Easier command mode.
-noremap ; :
-"" Tab to fold code blocks.
-nnoremap <tab> za
+
+"" Traverse wrapped lines correctly.
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
 
 "" Navigating with guides:
 "" Double-press semicolon in any mode to jump to the next guide.
@@ -55,7 +57,11 @@ map ;; <Esc>/<++><Enter>"_c4l
 vnoremap < <gv
 vnoremap > >gv
 
-" jk is easier to reach than esc.
+"" Easier command mode.
+noremap ; :
+"" Tab to fold code blocks.
+nnoremap <tab> za
+"" jk is easier to reach than esc.
 inoremap jk <esc>
 " }}}
 
