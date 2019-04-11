@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/plugged/')
     Plug 'tpope/vim-surround'
     Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
+    Plug 'mboughaba/i3config.vim'
 call plug#end()
 " }}}
 
