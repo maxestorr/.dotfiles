@@ -7,7 +7,8 @@
 "   ░░██   ░██ ███ ░██ ░██░███   ░░█████
 "    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
 "
-" Config for Neovim, by Max Storr
+" Config for Neovim
+" Author: Max Storr
 " Date: 11.04.2019
 
 " Plugins {{{
@@ -121,12 +122,9 @@ augroup latex_code_snippets
         \ inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0/DELRN<Enter>cgn|
         \ inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>|
         \ inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>|
-<<<<<<< HEAD
         \ set spell|
         \ set wrap
-=======
         \ set spell
->>>>>>> f91f441b490c4c5de1fd622a456557bf7521fdc7
 augroup END
 " }}}
 
