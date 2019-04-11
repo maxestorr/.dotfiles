@@ -10,7 +10,7 @@
 " Config for Neovim, by Max Storr
 " Date: 11.04.2019
 
-" Plugins for Vim {{{
+" Plugins {{{
 "" Plugins managed by junegunn/vim-plug.
 "" Auto-installation for vim-plug.
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -63,6 +63,12 @@ syntax on
 "" Stop colourscheme from altering GNOME-Terminal opacity settings.
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
+set lazyredraw
+set nowrap
+set colorcolumn=80
+set noerrorbells
+set showmatch
 " }}}
 
 " Misc. Settings {{{
@@ -92,18 +98,18 @@ let g:netrw_winsize = 15
 " Latex Code Snippets {{{
 augroup latex_snippets
     autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;bf \textbf{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;it \textit{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;ct \textcite{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;cc \cite{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;cp \parencite{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;ref \ref{}<++><Esc>T{i
-    autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
-    autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
-    autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
-    autocmd FileType tex inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0/DELRN<Enter>cgn
-    autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
-    autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
+    \ inoremap ;bf \textbf{}<++><Esc>T{i|
+    \ inoremap ;it \textit{}<++><Esc>T{i|
+    \ inoremap ;ct \textcite{}<++><Esc>T{i|
+    \ inoremap ;cc \cite{}<++><Esc>T{i|
+    \ inoremap ;cp \parencite{}<++><Esc>T{i|
+    \ inoremap ;ref \ref{}<++><Esc>T{i|
+    \ inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i|
+    \ inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i|
+    \ inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i|
+    \ inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0/DELRN<Enter>cgn|
+    \ inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>|
+    \ inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 augroup END
 " }}}
 
