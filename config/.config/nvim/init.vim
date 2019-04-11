@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/plugged/')
 call plug#end()
 " }}}
 
-" Colorscheme {{{
+" Colourscheme {{{
 set background=dark
 colorscheme solarized
 " }}}
@@ -51,18 +51,24 @@ vnoremap ;; <Esc>/<++><Enter>"_c4l
 map ;; <Esc>/<++><Enter>"_c4l
 " }}}
 
-" Settings {{{
-"" Split methods.
-set splitbelow
-set splitright
-
+" UI Config {{{
 "" Dynamic number lines.
 set number
 set relativenumber
 
 "" Filetype specific plugins, syntax highlighting, and indentation.
-filetype plugin indent on
+filetype on
 syntax on
+
+"" Stop colourscheme from altering GNOME-Terminal opacity settings.
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+" }}}
+
+" Misc. Settings {{{
+"" Split methods.
+set splitbelow
+set splitright
 
 "" Indentation settings.
 set tabstop=8           " Maximum width of a tab character.
@@ -76,22 +82,14 @@ set foldlevel=3         " Fold any blocks deeper than 3 indents.
 set conceallevel=2    " Conceal useful for markdown/latex notes.
 " }}}
 
-" Misc. Settings {{{
-"" Stop colourscheme from altering opacity settings
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none  " Non-text regions too.
-
-"" Vim file explorer (netrw) settings.
+" Netrw Settings {{{
+"" This is Vim's built-in file explorer.
 let g:netrw_banner = 0  " Hide the banner in netrw file explorer.
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 15
-
-"" Modeline for vimrc folding method.
-set modelines=1
 "}}}
 
 " Latex Code Snippets {{{
-"" Syntax highlighting is broken here because of curlybraces in the remaps.
 augroup latex_snippets
     autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i
     autocmd FileType tex inoremap ;bf \textbf{}<++><Esc>T{i
@@ -109,5 +107,6 @@ augroup latex_snippets
 augroup END
 " }}}
 
-" The modeline below is executed on opening this file.
+" Vimrc Fold Method {{{
+set modelines=1
 " vim:foldmethod=marker:foldlevel=0
