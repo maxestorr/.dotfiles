@@ -41,12 +41,6 @@ nnoremap <C-K> <C-W><C-k>
 nnoremap <C-L> <C-W><C-l>
 nnoremap <C-H> <C-W><C-h>
 
-"" Traverse wrapped lines correctly.
-noremap <silent> k gk
-noremap <silent> j gj
-noremap <silent> 0 g0
-noremap <silent> $ g$
-
 "" Navigating with guides:
 "" Double-press semicolon in any mode to jump to the next guide.
 inoremap ;; <Esc>/<++><Enter>"_c4l
