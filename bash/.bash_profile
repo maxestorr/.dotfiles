@@ -8,8 +8,12 @@ alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
 alias icf='vim ~/.dotfiles/config/.config/i3/config'
 alias bcf='vim ~/.bash_profile'
 
-# Add vim-live-latex-preview binaries for live latex compiling
-export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
-
 # Activate Vim keybindings
 set -o vi
+
+
+# $PATH Additions
+# Personal bash scripts
+export PATH="$PATH:$HOME/.scripts/"
+# Add vim-live-latex-preview binaries for live latex compiling
+export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
