@@ -9,7 +9,7 @@
 "
 " Config for Neovim
 " Author: Max Storr
-" Date: 11.04.2019
+" Date: 12.04.2019
 
 " Plugins {{{
 "" Plugins managed by junegunn/vim-plug.
@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/plugged/')
 call plug#end()
 " }}}
 
-" Colourscheme {{{
+" Colour Scheme {{{
 set background=dark
 colorscheme solarized
 " }}}
