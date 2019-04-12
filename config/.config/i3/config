@@ -1,9 +1,9 @@
 # i3-gaps config
 # Author: Max Storr
-# Date: 11.04.2019
+# Date: 12.04.2019
 
 # #---Basic Settings---# #
-font pango:System San Francisco Display 9
+font pango:System San Francisco Display 11
 
 
 # #---Key Bindings---# #
@@ -129,6 +129,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # #---Startup Applications---# #
 # Personal script to set background using feh
 exec_always --no-startup-id ~/.scripts/setbg
+exec_always --no-startup-id compton
 
 
 # #---Window Specific Settings---# #
@@ -145,11 +146,29 @@ for_window [class="Spotify"] move to workspace $ws10
 exec xinput set-prop 11 "libinput Tapping Enabled" 1
 exec xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 
+# #---i3 Status Bar---# #
+# I use those colors at bar and window color settings
+set $bg-color 	         #20202C
+set $inactive-bg-color   #20202C
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color 	 #E53935
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available).
 bar {
-        status_command i3status
+    status_command i3status
+    tray_output primary
+
+    colors {
+        background $bg-color
+        separator #757575
+        #                  border             background         text
+        focused_workspace  $bg-color          $bg-color          $text-color
+        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+    }
 }
 
 # Modeline for vim syntax highlighting.
