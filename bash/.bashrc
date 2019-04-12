@@ -5,6 +5,7 @@
 # Aliases
 # Config shortcuts
 alias cf='cd ~/.dotfiles/'
+alias ccf='vim ~/.dotfiles/config/.config/compton.conf'
 alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
 alias icf='vim ~/.dotfiles/config/.config/i3/config'
 alias bcf='vim ~/.bashrc'
@@ -24,7 +25,8 @@ export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
 set -o vi
 
 
-# Default .bashrc Contents
+# Default .bashrc Contents Below
+# ==============================
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
