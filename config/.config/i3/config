@@ -11,11 +11,17 @@ set $mod Mod4
 
 # Restart i3
 bindsym $mod+Shift+r restart
-# exit i3 (logout)
+# Exit i3 (logout)
 bindsym $mod+Shift+e exec i3-msg exit
+#Lock i3
+bindsym $mod+Shift+x exec ~/.scripts/lock
 
+# Program hotkeys
 # Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+d exec dmenu_run
+bindsym $mod+b exec chromium-browser
 
 # Change focus
 bindsym $mod+h focus left
@@ -37,9 +43,6 @@ bindsym $mod+Shift+y resize shrink width 2 px or 2 ppt
 bindsym $mod+Shift+u resize shrink height 2 px or 2 ppt
 bindsym $mod+Shift+i resize grow height 2 px or 2 ppt
 bindsym $mod+Shift+o resize grow width 2 px or 2 ppt
-
-# Start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
 
 # Toggle splits to spawn horizontal/vertical
 bindsym $mod+t split toggle
