@@ -10,6 +10,9 @@ alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
 alias icf='vim ~/.dotfiles/config/.config/i3/config'
 alias bcf='vim ~/.bashrc'
 
+# Work shortcuts
+alias bsc='cd ~/BSc-final_project_report/ && vim project_report.tex'
+
 # Personal script directory
 alias sc='cd ~/.scripts/'
 
