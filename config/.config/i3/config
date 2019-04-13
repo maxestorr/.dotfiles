@@ -64,8 +64,8 @@ bindsym $mod+space focus mode_toggle
 for_window [class=".*"] border pixel 0
 
 # Gap sizes
-gaps inner 15
-gaps outer 15
+gaps inner 30
+
 # Adjust sizes
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
