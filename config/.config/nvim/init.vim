@@ -23,6 +23,8 @@ endif
 "" Begin plugins.
 call plug#begin('~/.config/nvim/plugged/')
     Plug 'altercation/vim-colors-solarized'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
     Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
@@ -76,10 +78,15 @@ highlight NonText ctermbg=none
 "" Misc.
 set lazyredraw
 set nowrap
+set noshowmode
 set colorcolumn=80
 set noerrorbells
 set showmatch
 set encoding=utf-8
+
+"" Airline theme
+let g:airline_theme='solarized'
+let g:solarized_airline_bg='dark'
 " }}}
 
 " Misc. Settings {{{
