@@ -138,6 +138,10 @@ exec_always --no-startup-id compton
 # #---Window Specific Settings---# #
 # Applications that should be floating windows
 for_window [class="feh"] floating enable
+for_window [class="Nautilus"] floating enable
+for_window [class="Nautilus"] resize set 750 500
+for_window [class="File-roller"] floating enable
+for_window [class="File-roller"] resize set 750 500
 
 # Applications that belong on a specific workspace
 # 'assign' command won't work on Spotify
