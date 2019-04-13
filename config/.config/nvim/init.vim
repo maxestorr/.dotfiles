@@ -22,19 +22,25 @@ endif
 
 "" Begin plugins.
 call plug#begin('~/.config/nvim/plugged/')
-    Plug 'altercation/vim-colors-solarized'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
     Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
     Plug 'mboughaba/i3config.vim'
+    
+    " Colour Schemes
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'morhetz/gruvbox'
 call plug#end()
 " }}}
 
 " Colour Scheme {{{
+colorscheme gruvbox
 set background=dark
-colorscheme solarized
+
+"" Airline theme
+let g:airline_theme='gruvbox'
 " }}}
 
 " Key Remapping {{{
@@ -83,10 +89,6 @@ set colorcolumn=80
 set noerrorbells
 set showmatch
 set encoding=utf-8
-
-"" Airline theme
-let g:airline_theme='solarized'
-let g:solarized_airline_bg='dark'
 " }}}
 
 " Misc. Settings {{{
