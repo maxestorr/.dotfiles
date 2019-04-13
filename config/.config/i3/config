@@ -17,11 +17,10 @@ bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+Shift+x exec ~/.scripts/lock
 
 # Program hotkeys
-# Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-
 bindsym $mod+d exec dmenu_run
 bindsym $mod+b exec chromium-browser
+bindsym $mod+n exec nautilus
 
 # Change focus
 bindsym $mod+h focus left
