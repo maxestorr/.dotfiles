@@ -21,6 +21,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+d exec dmenu_run
 bindsym $mod+b exec chromium-browser
 bindsym $mod+n exec nautilus
+bindsym $mod+q exec qutebrowser
 
 # Change focus
 bindsym $mod+h focus left
@@ -131,7 +132,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # #---Startup Applications---# #
 # Personal script to set background using feh
 exec_always --no-startup-id ~/.scripts/setbg
-exec_always --no-startup-id compton
+exec_always --no-startup-id compton --config ~/.config/compton.conf -b
 
 
 # #---Window Specific Settings---# #
@@ -141,6 +142,7 @@ for_window [class="Nautilus"] floating enable
 for_window [class="Nautilus"] resize set 750 500
 for_window [class="File-roller"] floating enable
 for_window [class="File-roller"] resize set 750 500
+# ToDo: Include a rule for chromium pop-ups
 
 # Applications that belong on a specific workspace
 # 'assign' command won't work on Spotify
