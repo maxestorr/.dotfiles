@@ -81,6 +81,15 @@ syntax on
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
+"" Whenever color scheme is set, re-apply the above settings. Useful for when
+"" exiting GoYo resets these UI settings.
+augroup fix_colors
+    autocmd!
+    " When calling colorscheme, also run these commands
+    autocmd ColorScheme * highlight Normal ctermbg=none |
+                        \ highlight NonText ctermbg=none
+augroup END
+
 "" Misc.
 set lazyredraw
 set nowrap
