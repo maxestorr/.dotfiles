@@ -22,6 +22,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+b exec chromium-browser
 bindsym $mod+n exec nautilus
 bindsym $mod+q exec qutebrowser
+bindsym $mod+m exec spotify
 
 # Change focus
 bindsym $mod+h focus left
