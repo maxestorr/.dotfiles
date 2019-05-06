@@ -23,6 +23,7 @@ bindsym $mod+b exec chromium-browser
 bindsym $mod+n exec nautilus
 bindsym $mod+q exec qutebrowser
 bindsym $mod+m exec spotify
+bindsym $mod+c exec flameshot gui
 
 # Change focus
 bindsym $mod+h focus left
@@ -71,7 +72,7 @@ gaps inner 30
 # Adjust sizes
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
-bindsym $mod+s	gaps inner current plus 5
+bindsym $mod+s gaps inner current plus 5
 bindsym $mod+Shift+s gaps inner current minus 5
 
 
@@ -143,6 +144,8 @@ for_window [class="Nautilus"] floating enable
 for_window [class="Nautilus"] resize set 750 500
 for_window [class="File-roller"] floating enable
 for_window [class="File-roller"] resize set 750 500
+for_window [class="fiji-Main"] floating enable
+for_window [class="Eog"] floating enable
 # ToDo: Include a rule for chromium pop-ups
 
 # Applications that belong on a specific workspace
