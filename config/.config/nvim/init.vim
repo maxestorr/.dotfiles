@@ -121,7 +121,7 @@ set conceallevel=2      " Conceal useful for markdown/latex notes.
 "" Undo command persists even after session-end.
 set undofile
 set undodir=/tmp/vim_undo_history  " /tmp/ purges on reboot
-" }}}
+"}}}
 
 " Netrw Settings {{{
 "" This is Vim's built-in file explorer.
