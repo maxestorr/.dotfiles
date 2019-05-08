@@ -1,26 +1,26 @@
 # Bash Profile
 # Author: Max Storr
-# Date: 12.04.2019
 
 # Aliases
-# Config shortcuts
+## Config shortcuts
 alias cf='cd ~/.dotfiles/'
 alias ccf='vim ~/.dotfiles/config/.config/compton.conf'
 alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
 alias icf='vim ~/.dotfiles/config/.config/i3/config'
-alias bcf='vim ~/.bashrc'
+alias bcf='vim ~/.dotfiles/bash/.bashrc'
+alias xcf='vim ~/.dotfiles/Xdefaults/.Xdefaults'
 
-# Work shortcuts
+## Work shortcuts
 alias bsc='cd ~/BSc-final_project_report/ && vim project_report.tex'
 
-# Personal script directory
+## Personal script directory
 alias sc='cd ~/.scripts/'
 
 
 # $PATH Additions
-# Personal bash scripts
+## Personal bash scripts
 export PATH="$PATH:$HOME/.scripts/"
-# Add vim-live-latex-preview binaries for live latex compiling
+## Add vim-live-latex-preview binaries for live latex compiling
 export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
 
 
