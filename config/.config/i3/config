@@ -134,7 +134,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # #---Startup Applications---# #
 # Personal script to set background using feh
-exec_always --no-startup-id ~/.scripts/setbg
+# exec --no-startup-id ~/.scripts/setbg
+# Setbg & pywal colourscheme
+exec --no-startup-id ~/.scripts/setwal
 # Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
 
