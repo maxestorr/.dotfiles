@@ -18,7 +18,7 @@ bindsym $mod+Shift+x exec ~/.scripts/lock
 
 # Program hotkeys
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 bindsym $mod+b exec chromium-browser
 bindsym $mod+n exec nautilus
 bindsym $mod+q exec qutebrowser
@@ -65,7 +65,7 @@ bindsym $mod+space focus mode_toggle
 
 # #---i3-gaps Settings---# #
 # Disable window titlebars for i3-gaps to work
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
 # Gap sizes
 gaps inner 30
@@ -134,7 +134,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # #---Startup Applications---# #
 # Set background using feh & pywal colourscheme
-exec --no-startup-id ~/.scripts/setwal
+exec --no-startup-id ~/.scripts/setbg
 # Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
 
@@ -184,6 +184,19 @@ bar {
         urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
     }
 }
+
+# #--Pywal Colour Scheme---# #
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 # Modeline for vim syntax highlighting.
 # vim:filetype=i3config
