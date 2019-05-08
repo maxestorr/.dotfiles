@@ -1,0 +1,6 @@
+#!/bin/sh
+# Pywal wrapper around ~/.scripts/setbg
+[ ! -z "$1" ] && cp "$1" ~/.config/wallpaper.png
+feh --bg-fill ~/.config/wallpaper.png
+wal -c  # Clear cache (pywal caches colour schemes based on path)
+wal -ni ~/.config/wallpaper.png
