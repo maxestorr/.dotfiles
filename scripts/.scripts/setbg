@@ -2,5 +2,5 @@
 # Sets the background. If given an argument, will set file as background.
 [ ! -z "$1" ] && cp "$1" ~/.config/wallpaper.png
 feh --bg-fill ~/.config/wallpaper.png
-wal -c  # Clear cache (pywal caches colour schemes based on path)
+wal -c
 wal -ni ~/.config/wallpaper.png

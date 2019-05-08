@@ -1,8 +1,6 @@
 # i3-gaps config
 # Author: Max Storr
-# Date: 12.04.2019
-
-# #---Basic Settings---# #
+# Date: 12.04.2019 #---Basic Settings---# #
 font pango:System San Francisco Display 11
 
 
@@ -18,7 +16,7 @@ bindsym $mod+Shift+x exec ~/.scripts/lock
 
 # Program hotkeys
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+bindsym $mod+d exec dmenu_run
 bindsym $mod+b exec chromium-browser
 bindsym $mod+n exec nautilus
 bindsym $mod+q exec qutebrowser
@@ -185,18 +183,31 @@ bar {
     }
 }
 
-# #--Pywal Colour Scheme---# #
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $c0 color0 #f0f0f0
+set_from_resource $c1 color1 #f0f0f0
+set_from_resource $c2 color2 #f0f0f0
+set_from_resource $c3 color3 #f0f0f0
+set_from_resource $c4 color4 #f0f0f0
+set_from_resource $c5 color5 #f0f0f0
+set_from_resource $c6 color6 #f0f0f0
+set_from_resource $c7 color7 #f0f0f0
+set_from_resource $c8 color8 #f0f0f0
+set_from_resource $c9 color9 #f0f0f0
+set_from_resource $c10 color10 #f0f0f0
+set_from_resource $c11 color11 #f0f0f0
+set_from_resource $c12 color12 #f0f0f0
+set_from_resource $c13 color13 #f0f0f0
+set_from_resource $c14 color14 #f0f0f0
+set_from_resource $c15 color15 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.focused          $c7     $c7     $c0  $c7       $c7
+client.focused_inactive $c2     $c2     $c7  $c2       $c2
+client.unfocused        $c2     $c2     $c7  $c2       $c2
+client.urgent           $c4     $c4     $c0  $c2       $c2
+client.placeholder      $c2     $c2     $c7  $c2       $c2
 
-client.background       $bg
+client.background       $c0
 
 # Modeline for vim syntax highlighting.
 # vim:filetype=i3config
