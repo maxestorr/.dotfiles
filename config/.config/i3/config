@@ -24,6 +24,7 @@ bindsym $mod+n exec nautilus
 bindsym $mod+q exec qutebrowser
 bindsym $mod+m exec spotify
 bindsym $mod+c exec flameshot gui
+bindsym $mod+r exec i3-sensible-terminal -e ranger
 
 # Change focus
 bindsym $mod+h focus left
@@ -40,11 +41,11 @@ bindsym $mod+Shift+l move right 30
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Resize focused window
-bindsym $mod+Shift+y resize shrink width 2 px or 2 ppt
-bindsym $mod+Shift+u resize shrink height 2 px or 2 ppt
-bindsym $mod+Shift+i resize grow height 2 px or 2 ppt
-bindsym $mod+Shift+o resize grow width 2 px or 2 ppt
+# Resize focused window (floating windows by px, tiles by ppt)
+bindsym $mod+Shift+y resize shrink width 10 px or 2 ppt
+bindsym $mod+Shift+u resize shrink height 10 px or 2 ppt
+bindsym $mod+Shift+i resize grow height 10 px or 2 ppt
+bindsym $mod+Shift+o resize grow width 10 px or 2 ppt
 
 # Toggle splits to spawn horizontal/vertical
 bindsym $mod+t split toggle
@@ -134,6 +135,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # #---Startup Applications---# #
 # Personal script to set background using feh
 exec_always --no-startup-id ~/.scripts/setbg
+# Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
 
 
@@ -154,7 +156,7 @@ for_window [class="Spotify"] move to workspace $ws10
 
 
 # #---Enable Devices---# #
-# Enable normal touchpad behaviour
+# Enable normal touchpad (xinput device 11) behaviour
 exec xinput set-prop 11 "libinput Tapping Enabled" 1
 exec xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 
