@@ -24,6 +24,7 @@ alias sc='cd ~/.scripts/'
 # $PATH Additions
 ## Personal bash scripts
 export PATH="$PATH:$HOME/.scripts/"
+export PATH="$PATH:$HOME/.toys/"
 ## Add vim-live-latex-preview binaries for live latex compiling
 export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
 
