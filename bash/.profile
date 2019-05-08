@@ -2,7 +2,7 @@
 # Author: Max Storr
 
 # Environment variables
-export TERMINAL=rxvt-unicode
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Aliases
 ## Config shortcuts
@@ -35,6 +35,9 @@ set -o vi
 # Pywal settings
 ## Import colorscheme from 'wal' asynchronously
 # (cat ~/.cache/wal/sequences &)
+
+## Set $color variables by sourcing colors.sh
+. "${HOME}/.cache/wal/colors.sh"
 
 
 # Default .bashrc Contents Below
