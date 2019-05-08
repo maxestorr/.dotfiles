@@ -19,7 +19,7 @@ Urxvt*secondaryScroll: true    # Enable Shift-PageUp/Down in screen
 URxvt*scrollTtyKeypress: true 
 
 !! Extensions
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,keyboard-select
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keyboard-select.clipboard: true
 URxvt.urlLauncher: chromium

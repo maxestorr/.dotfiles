@@ -34,7 +34,7 @@ set -o vi
 
 # Pywal settings
 ## Import colorscheme from 'wal' asynchronously
-# (cat ~/.cache/wal/sequences &)
+(cat ~/.cache/wal/sequences &)
 
 ## Set $color variables by sourcing colors.sh
 . "${HOME}/.cache/wal/colors.sh"
