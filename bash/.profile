@@ -1,14 +1,18 @@
 # Bash Profile
 # Author: Max Storr
 
+# Environment variables
+export TERMINAL=rxvt-unicode
+
 # Aliases
 ## Config shortcuts
 alias cf='cd ~/.dotfiles/'
 alias ccf='vim ~/.dotfiles/config/.config/compton.conf'
 alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
 alias icf='vim ~/.dotfiles/config/.config/i3/config'
-alias bcf='vim ~/.dotfiles/bash/.bashrc'
+alias bcf='vim ~/.dotfiles/bash/.profile'
 alias xcf='vim ~/.dotfiles/Xdefaults/.Xdefaults'
+alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 
 ## Work shortcuts
 alias bsc='cd ~/BSc-final_project_report/ && vim project_report.tex'
@@ -26,6 +30,11 @@ export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
 
 # Activate Vim keybindings
 set -o vi
+
+
+# Pywal settings
+## Import colorscheme from 'wal' asynchronously
+# (cat ~/.cache/wal/sequences &)
 
 
 # Default .bashrc Contents Below
@@ -76,7 +85,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
