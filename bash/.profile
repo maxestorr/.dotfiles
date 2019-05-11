@@ -37,9 +37,6 @@ set -o vi
 ## Import colorscheme from 'wal' asynchronously
 (cat ~/.cache/wal/sequences &)
 
-## Set $color variables by sourcing colors.sh
-. "${HOME}/.cache/wal/colors.sh"
-
 
 # Default .bashrc Contents Below
 # ==============================
