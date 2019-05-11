@@ -26,7 +26,7 @@ alias sc='cd ~/.scripts/'
 export PATH="$PATH:$HOME/.scripts/"
 export PATH="$PATH:$HOME/.toys/color-scripts/"
 ## Add vim-live-latex-preview binaries for live latex compiling
-export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin"
+export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin/"
 
 
 # Activate Vim keybindings
