@@ -31,16 +31,17 @@ call plug#begin('~/.config/nvim/plugged/')
     
     " Colour Schemes
     Plug 'altercation/vim-colors-solarized'
+    Plug 'dylanaraps/wal.vim'
     Plug 'morhetz/gruvbox'
 call plug#end()
 " }}}
 
 " Colour Scheme {{{
-colorscheme gruvbox
+colorscheme wal
 set background=dark
 
 "" Airline theme
-let g:airline_theme='gruvbox'
+""let g:airline_theme='gruvbox'
 " }}}
 
 " Key Remapping {{{
