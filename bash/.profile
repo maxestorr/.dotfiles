@@ -11,7 +11,7 @@ alias ccf='vim ~/.dotfiles/config/.config/compton.conf'
 alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
 alias icf='vim ~/.dotfiles/config/.config/i3/config'
 alias bcf='vim ~/.dotfiles/bash/.profile'
-alias xcf='vim ~/.dotfiles/Xdefaults/.Xdefaults'
+alias xcf='vim ~/.dotfiles/Xresources/.Xresources'
 alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 
 ## Work shortcuts
