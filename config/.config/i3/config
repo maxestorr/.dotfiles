@@ -1,6 +1,8 @@
 # i3-gaps config
 # Author: Max Storr
-# Date: 12.04.2019 #---Basic Settings---# #
+# Date: 12.04.2019
+
+#---Basic Settings---# #
 font pango:System San Francisco Display 11
 
 
@@ -94,16 +96,16 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 # #---Workspaces---# #
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "I"
+set $ws2 "II"
+set $ws3 "III"
+set $ws4 "IV"
+set $ws5 "V"
+set $ws6 "VI"
+set $ws7 "VII"
+set $ws8 "VIII"
+set $ws9 "XI"
+set $ws10 "X"
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -134,8 +136,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Set background using feh & reload pywal colourscheme
 exec --no-startup-id setwal
 exec --no-startup-id ~/.local/bin/wal -R
+
 # Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
+
 
 
 # #---Window Specific Settings---# #
@@ -160,13 +164,30 @@ exec xinput set-prop 11 "libinput Tapping Enabled" 1
 exec xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 
 # #---i3 Status Bar---# #
-# I use those colors at bar and window color settings
-set $bg-color 	         #20202C
-set $inactive-bg-color   #20202C
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color 	 #E53935
+# Define colour variables from .Xresources
+set_from_resource $col0  color0 #f0f0f0
+set_from_resource $col1  color1 #f0f0f0
+set_from_resource $col2  color2 #f0f0f0
+set_from_resource $col3  color3 #f0f0f0
+set_from_resource $col4  color4 #f0f0f0
+set_from_resource $col5  color5 #f0f0f0
+set_from_resource $col6  color6 #f0f0f0
+set_from_resource $col7  color7 #f0f0f0
+set_from_resource $col8  color8 #f0f0f0
+set_from_resource $col9  color9 #f0f0f0
+set_from_resource $col10 color10 #f0f0f0
+set_from_resource $col11 color11 #f0f0f0
+set_from_resource $col12 color12 #f0f0f0
+set_from_resource $col13 color13 #f0f0f0
+set_from_resource $col14 color14 #f0f0f0
+set_from_resource $col15 color15 #f0f0f0
 
+# i3status colours
+set_from_resource $bg-color 	        color0 #f0f0f0
+set_from_resource $inactive-bg-color    color0 #f0f0f0
+set_from_resource $text-color           color14 #f0f0f0
+set_from_resource $inactive-text-color  color8 #f0f0f0
+set_from_resource $urgent-bg-color 	color7 #f0f0f0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available).
@@ -184,31 +205,14 @@ bar {
     }
 }
 
-set_from_resource $c0 color0 #f0f0f0
-set_from_resource $c1 color1 #f0f0f0
-set_from_resource $c2 color2 #f0f0f0
-set_from_resource $c3 color3 #f0f0f0
-set_from_resource $c4 color4 #f0f0f0
-set_from_resource $c5 color5 #f0f0f0
-set_from_resource $c6 color6 #f0f0f0
-set_from_resource $c7 color7 #f0f0f0
-set_from_resource $c8 color8 #f0f0f0
-set_from_resource $c9 color9 #f0f0f0
-set_from_resource $c10 color10 #f0f0f0
-set_from_resource $c11 color11 #f0f0f0
-set_from_resource $c12 color12 #f0f0f0
-set_from_resource $c13 color13 #f0f0f0
-set_from_resource $c14 color14 #f0f0f0
-set_from_resource $c15 color15 #f0f0f0
+# class                 border  backgr. text   indicator child_border
+client.focused          $col7   $col7   $col0  $col7     $col7
+client.focused_inactive $col2   $col2   $col7  $col2     $col2
+client.unfocused        $col2   $col2   $col7  $col2     $col2
+client.urgent           $col4   $col4   $col0  $col2     $col2
+client.placeholder      $col2   $col2   $col7  $col2     $col2
 
-# class                 border  backgr. text indicator child_border
-client.focused          $c7     $c7     $c0  $c7       $c7
-client.focused_inactive $c2     $c2     $c7  $c2       $c2
-client.unfocused        $c2     $c2     $c7  $c2       $c2
-client.urgent           $c4     $c4     $c0  $c2       $c2
-client.placeholder      $c2     $c2     $c7  $c2       $c2
-
-client.background       $c0
+client.background       $col0
 
 # Modeline for vim syntax highlighting.
 # vim:filetype=i3config
