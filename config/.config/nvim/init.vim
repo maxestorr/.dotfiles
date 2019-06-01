@@ -14,7 +14,7 @@
 " Plugins {{{
 "" Plugins managed by junegunn/vim-plug.
 "" Auto-installation for vim-plug.
-if empty(glob('~/.vim/autoload/plug.vim'))
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -37,11 +37,11 @@ call plug#end()
 " }}}
 
 " Colour Scheme {{{
-colorscheme wal
+colorscheme gruvbox
 set background=dark
 
 "" Airline theme
-""let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox'
 " }}}
 
 " Key Remapping {{{
@@ -121,7 +121,9 @@ set conceallevel=2      " Conceal useful for markdown/latex notes.
 " Persistent Undo History {{{
 "" Undo command persists even after session-end.
 set undofile
-set undodir=/tmp/vim_undo_history  " /tmp/ purges on reboot
+set undodir=~/.vim_undodir/
+set undolevels=1000
+set undoreload=1000
 "}}}
 
 " Netrw Settings {{{
