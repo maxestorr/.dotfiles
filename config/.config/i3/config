@@ -9,7 +9,8 @@ font pango:System San Francisco Display 11
 # #---Key Bindings---# #
 set $mod Mod4
 
-# Restart i3 bindsym $mod+Shift+r restart
+# Restart i3
+bindsym $mod+Shift+r restart
 # Exit i3 (logout)
 bindsym $mod+Shift+e exec i3-msg exit
 #Lock i3
@@ -132,9 +133,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 # #---Startup Applications---# #
-# Set background using feh & reload pywal colourscheme
-exec --no-startup-id setwal
-exec --no-startup-id ~/.local/bin/wal -R  # Reload pywal colourscheme
+# Personal script to reload the wallpaper
+exec --no-startup-id setbg
+exec --no-startup-id ~/.local/bin/wal -nR  # Reload pywal colourscheme
 
 # Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
