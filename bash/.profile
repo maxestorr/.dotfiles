@@ -14,9 +14,6 @@ alias bcf='vim ~/.dotfiles/bash/.profile'
 alias xcf='vim ~/.dotfiles/Xresources/.Xresources'
 alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 
-## Work shortcuts
-alias bsc='cd ~/BSc-final_project_report/ && vim project_report.tex'
-
 ## Personal script directory
 alias sc='cd ~/.scripts/'
 
