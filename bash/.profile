@@ -15,13 +15,13 @@ alias xcf='vim ~/.dotfiles/Xresources/.Xresources'
 alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 
 ## Personal script directory
-alias sc='cd ~/.scripts/'
+alias sc='cd ~/.dotfiles/bin/scripts'
 
 
 # $PATH Additions
 ## Personal bash scripts
-export PATH="$PATH:$HOME/.scripts/"
-export PATH="$PATH:$HOME/.toys/color-scripts/"
+export PATH="$PATH:$HOME/bin/scripts"
+export PATH="$PATH:$HOME/bin/colour_scripts/"
 ## Add vim-live-latex-preview binaries for live latex compiling
 export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin/"
 
