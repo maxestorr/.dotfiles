@@ -1,0 +1,6 @@
+#! /bin/sh
+# Creates a /tmp/ directory in home for ease of use
+# Add the following line as a cron job using '$crontab -e':
+# @reboot /home/your-username-here/bin/scripts/home-tmp
+
+mkdir /tmp/home-tmp && ln -s /tmp/home-tmp /home/max/tmp

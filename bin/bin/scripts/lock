@@ -1,4 +1,5 @@
 #! /bin/sh
+# Blurred lockscreen using scrot screen capture and i3lock
 
 tmpbg='/tmp/screen.png'
 

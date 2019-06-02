@@ -15,7 +15,7 @@ alias xcf='vim ~/.dotfiles/Xresources/.Xresources'
 alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 
 ## Personal script directory
-alias sc='cd ~/.dotfiles/bin/scripts'
+alias sc='cd ~/.dotfiles/bin/bin/scripts'
 
 
 # $PATH Additions
