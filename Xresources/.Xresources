@@ -13,6 +13,7 @@ URxvt.borderless: 1
 URxvt.scrollBar: false
 
 !! UI
+URxvt.internalBorder: 20
 
 !! Scrolling
 URxvt.secondaryScroll: true    # Enable Shift-PageUp/Down in screen
