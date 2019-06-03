@@ -180,7 +180,7 @@ bar {
     i3bar_command i3bar -t
     status_command i3blocks
     position bottom
-    font pango:Font Awesome 5 9
+    font pango:Font Awesome 5 10
     colors {
         # bar background color
         background $bg
