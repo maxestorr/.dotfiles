@@ -32,7 +32,7 @@ set -o vi
 
 # Pywal settings
 ## Import colorscheme from 'wal' asynchronously
-(cat ~/.cache/wal/sequences &)
+## (cat ~/.cache/wal/sequences &)
 
 
 # Default .bashrc Contents Below
