@@ -135,7 +135,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # #---Startup Applications---# #
 # Personal script to reload the wallpaper
 exec --no-startup-id setbg
-exec --no-startup-id ~/.local/bin/wal -nR  # Reload pywal colourscheme
 
 # Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
@@ -163,56 +162,56 @@ for_window [class="Eog"] floating enable
 exec xinput set-prop 11 "libinput Tapping Enabled" 1
 exec xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 
-# #---i3 Status Bar---# #
-# Define colour variables from .Xresources
-set_from_resource $col0  color0 #f0f0f0
-set_from_resource $col1  color1 #f0f0f0
-set_from_resource $col2  color2 #f0f0f0
-set_from_resource $col3  color3 #f0f0f0
-set_from_resource $col4  color4 #f0f0f0
-set_from_resource $col5  color5 #f0f0f0
-set_from_resource $col6  color6 #f0f0f0
-set_from_resource $col7  color7 #f0f0f0
-set_from_resource $col8  color8 #f0f0f0
-set_from_resource $col9  color9 #f0f0f0
-set_from_resource $col10 color10 #f0f0f0
-set_from_resource $col11 color11 #f0f0f0
-set_from_resource $col12 color12 #f0f0f0
-set_from_resource $col13 color13 #f0f0f0
-set_from_resource $col14 color14 #f0f0f0
-set_from_resource $col15 color15 #f0f0f0
 
-# i3status colours
-set_from_resource $bg-color 	        color0 #f0f0f0
-set_from_resource $inactive-bg-color    color0 #f0f0f0
-set_from_resource $text-color           color14 #f0f0f0
-set_from_resource $inactive-text-color  color8 #f0f0f0
-set_from_resource $urgent-bg-color 	color7 #f0f0f0
+# #---Theme---# #
+set $bg         #282828
+set $fg         #ebdbb2
+set $red        #cc241d
+set $green      #98971a
+set $yellow     #d79921
+set $blue       #458588
+set $purple     #b16286
+set $aqua       #689d68
+set $gray       #a89984
+set $darkgray   #1d2021
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available).
+# #---i3-status---# #
 bar {
-    status_command i3status
-    tray_output primary
-
+    i3bar_command i3bar -t
+    status_command i3blocks
+    position bottom
+    font pango:Font Awesome 5 9
     colors {
-        background $bg-color
-        separator #757575
-        #                  border             background         text
-        focused_workspace  $bg-color          $bg-color          $text-color
-        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
     }
 }
 
-# class                 border  backgr. text   indicator child_border
-client.focused          $col7   $col7   $col0  $col7     $col7
-client.focused_inactive $col2   $col2   $col7  $col2     $col2
-client.unfocused        $bg-color   $bg-color   $col7  $bg-color     $bg-color
-client.urgent           $col4   $col4   $col0  $col2     $col2
-client.placeholder      $col2   $col2   $col7  $col2     $col2
+# #---Window Borders---# #
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
 
-client.background       $col0
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $fg
+client.focused_inactive $darkgray $darkgray $yellow $purple $fg
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
 
-# Modeline for vim syntax highlighting.
+#end of window title bars & borders section
+
+
+# #---Modeline for vim syntax highlighting---# #
 # vim:filetype=i3config
