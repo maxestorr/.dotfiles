@@ -65,7 +65,7 @@ bindsym $mod+space focus mode_toggle
 
 # #---i3-gaps Settings---# #
 # Disable window titlebars for i3-gaps to work
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 5
 
 # Gap sizes
 gaps inner 30
@@ -208,7 +208,7 @@ bar {
 # class                 border  backgr. text   indicator child_border
 client.focused          $col7   $col7   $col0  $col7     $col7
 client.focused_inactive $col2   $col2   $col7  $col2     $col2
-client.unfocused        $col2   $col2   $col7  $col2     $col2
+client.unfocused        $bg-color   $bg-color   $col7  $bg-color     $bg-color
 client.urgent           $col4   $col4   $col0  $col2     $col2
 client.placeholder      $col2   $col2   $col7  $col2     $col2
 
