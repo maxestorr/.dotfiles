@@ -168,8 +168,10 @@ set $bg         #282828
 set $fg         #ebdbb2
 set $red        #cc241d
 set $green      #98971a
+set $lightgreen #b8bb26
 set $yellow     #d79921
 set $blue       #458588
+set $lightblue  #83a598
 set $purple     #b16286
 set $aqua       #689d68
 set $gray       #a89984
@@ -196,21 +198,26 @@ bar {
 }
 
 # #---Window Borders---# #
+# mnmlst gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $bg $bg $darkgray $gray $fg
+#client.focused_inactive $darkgray $darkgray $yellow $darkgray $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $darkgray $darkgray
+#client.urgent           $red $red $white $red $red
+
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.focused          $green $green $darkgray $lightgreen $green
+#client.focused_inactive $darkgray $darkgray $yellow $darkgray $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $darkgray $darkgray
 #client.urgent           $red $red $white $red $red
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $fg
-client.focused_inactive $darkgray $darkgray $yellow $purple $fg
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.focused          $blue $blue $darkgray $lightblue $blue
+client.focused_inactive $darkgray $darkgray $yellow $darkgray $darkgray
+client.unfocused        $darkgray $darkgray $yellow $darkgray $darkgray
 client.urgent           $red $red $white $red $red
-
-#end of window title bars & borders section
 
 
 # #---Modeline for vim syntax highlighting---# #
