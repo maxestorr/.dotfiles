@@ -1,12 +1,14 @@
 #! /bin/sh
 
-echo `pactl list sinks | grep '^[[:space:]]Volume:' | \
-    sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'`%
+# 'full-status' first output is volume, second output is mute-status
+vol=$(pulseaudio-ctl full-status | awk '{print $1}')
+mute_status=$(pulseaudio-ctl full-status | awk '{print $2}')
 
-case $BLOCK_BUTTON  in
-	1)
-		$TERMINAL -e pulsemixer
-		;;
+case ${mute_status} in
+    yes)
+        icon=" " ;;
+    no)
+        icon=" " ;;
 esac
 
-exit 0
+echo "${icon} ${vol}%"
