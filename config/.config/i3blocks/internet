@@ -24,5 +24,3 @@ case $BLOCK_BUTTON in
 		$TERMINAL -e nmtui
 		;;
 esac
-
-exit 0

@@ -33,5 +33,3 @@ esac
 echo "${icon} ${capacity}%"
 echo "${icon} ${capacity}%"
 echo "${color}"
-
-exit 0
