@@ -3,7 +3,6 @@ separator_block_width=15
 markup=none
 
 [volume]
-label=
 interval=1
 
 [internet]
@@ -12,7 +11,5 @@ interval=10
 [battery]
 interval=30
 
-[time]
-label=
-command=date "+%a %Y-%m-%d %l:%M %P"
+[datetime]
 interval=60
