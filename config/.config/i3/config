@@ -78,10 +78,15 @@ bindsym $mod+Shift+s gaps inner current minus 5
 
 
 # #---Function Keys---# #
-# Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# Volume control using pactl (default for GNOME)
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Volume control using https://github.com/graysky2/pulseaudio-ctl
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
+bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute
 
 # Brightness
 bindsym XF86MonBrightnessUp exec light -A 5
@@ -135,6 +140,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # #---Startup Applications---# #
 # Personal script to reload the wallpaper
 exec --no-startup-id setbg
+# On login, set volume to 25% and mute for safety
+exec --no-startup-id pulseaudio-ctl set 25
+exec --no-startup-id pulseaudio-ctl mute
 
 # Launch Compton compositor with specified config and daemonise '-b'
 exec_always --no-startup-id compton --config ~/.config/compton.conf -b
