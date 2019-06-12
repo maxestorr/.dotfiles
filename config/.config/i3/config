@@ -4,6 +4,7 @@
 
 #---Basic Settings---# #
 font pango:System San Francisco Display 11
+focus_follows_mouse no
 
 
 # #---Key Bindings---# #
