@@ -156,6 +156,7 @@ for_window [class="File-roller"] floating enable
 for_window [class="File-roller"] resize set 750 500
 for_window [class="fiji-Main"] floating enable
 for_window [class="Eog"] floating enable
+for_window [role="pop-up"] floating enable
 # ToDo: Include a rule for chromium pop-ups
 
 # Applications that belong on a specific workspace
