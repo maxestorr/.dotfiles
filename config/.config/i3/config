@@ -26,6 +26,7 @@ bindsym $mod+q exec qutebrowser
 bindsym $mod+m exec spotify
 bindsym $mod+c exec flameshot gui
 bindsym $mod+r exec i3-sensible-terminal -e ranger
+bindsym $mod+u exec hidecursor
 
 # Change focus
 bindsym $mod+h focus left
