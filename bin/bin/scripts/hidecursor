@@ -1,0 +1,8 @@
+#! /bin/bash
+# Toggles the unclutter application to hide the mouse cursor
+
+if [ -z $(pgrep unclutter) ]; then
+    unclutter -idle 2 & disown
+else
+    pkill unclutter
+fi
