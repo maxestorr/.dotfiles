@@ -114,10 +114,6 @@ set expandtab           " Tab button types spaces.
 "" Fold settings.
 set foldmethod=syntax
 set foldlevel=3         " Fold any blocks deeper than 3 indents.
-
-augroup conceal_for_prose
-    autocmd!
-    autocmd FileType tex,md set conceallevel=2  " **Text** becomes bold, etc.
 " }}}
 
 " Persistent Undo History {{{
