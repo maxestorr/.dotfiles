@@ -25,8 +25,12 @@ bindsym $mod+n exec nautilus
 bindsym $mod+q exec qutebrowser
 bindsym $mod+m exec spotify
 bindsym $mod+c exec flameshot gui
-bindsym $mod+r exec i3-sensible-terminal -e ranger
 bindsym $mod+u exec togglecursor
+
+bindsym $mod+a exec i3-sensible-terminal -e ranger
+bindsym $mod+Shift+a exec i3-sensible-terminal -e sudo ranger
+bindsym $mod+w exec i3-sensible-terminal -e htop
+bindsym $mod+Shift+w exec i3-sensible-terminal -e sudo htop
 
 # Change focus
 bindsym $mod+h focus left
@@ -211,21 +215,21 @@ bar {
 #client.focused          $bg $bg $darkgray $gray $fg
 #client.focused_inactive $darkgray $darkgray $yellow $darkgray $darkgray
 #client.unfocused        $darkgray $darkgray $yellow $darkgray $darkgray
-#client.urgent           $red $red $white $red $red
+#client.urgent           $red $red %fg $red $red
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
 #client.focused          $green $green $darkgray $lightgreen $green
 #client.focused_inactive $darkgray $darkgray $yellow $darkgray $darkgray
 #client.unfocused        $darkgray $darkgray $yellow $darkgray $darkgray
-#client.urgent           $red $red $white $red $red
+#client.urgent           $red $red %fg $red $red
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
 client.focused          $blue $blue $darkgray $lightblue $blue
 client.focused_inactive $darkgray $darkgray $yellow $darkgray $darkgray
 client.unfocused        $darkgray $darkgray $yellow $darkgray $darkgray
-client.urgent           $red $red $white $red $red
+client.urgent           $red $red %fg $red $red
 
 
 # #---Modeline for vim syntax highlighting---# #
