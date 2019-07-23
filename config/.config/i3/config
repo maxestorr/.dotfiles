@@ -8,14 +8,24 @@ focus_follows_mouse no
 
 
 # #---Key Bindings---# #
+# Set super key as mod key
 set $mod Mod4
 
 # Restart i3
 bindsym $mod+Shift+r restart
-# Exit i3 (logout)
-bindsym $mod+Shift+e exec i3-msg exit
-#Lock i3
+# Lock i3
 bindsym $mod+Shift+x exec lock
+# Create Log out, Reboot, Poweroff bindings
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym $mod+r exec systemctl reboot
+        bindsym $mod+l exit
+        bindsym $mod+p exec systemctl poweroff
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
 # Program hotkeys
 bindsym $mod+Return exec i3-sensible-terminal
