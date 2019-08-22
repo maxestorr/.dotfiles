@@ -37,6 +37,7 @@ bindsym $mod+m exec spotify
 bindsym $mod+c exec flameshot gui
 bindsym $mod+u exec togglecursor
 
+# Terminal based applications
 bindsym $mod+a exec i3-sensible-terminal -e ranger
 bindsym $mod+Shift+a exec i3-sensible-terminal -e sudo ranger
 bindsym $mod+w exec i3-sensible-terminal -e htop
