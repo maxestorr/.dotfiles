@@ -27,12 +27,8 @@ call plug#begin('~/.config/nvim/plugged/')
     Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
     Plug 'mboughaba/i3config.vim'
-    Plug 'scrooloose/syntastic'
-    Plug 'dbeniamine/cheat.sh-vim'
     
     " Colour Schemes
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'dylanaraps/wal.vim'
     Plug 'morhetz/gruvbox'
 call plug#end()
 " }}}
