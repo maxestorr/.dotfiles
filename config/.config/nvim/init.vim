@@ -24,7 +24,7 @@ call plug#begin('~/.config/nvim/plugged/')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
-    Plug 'ying17zi/vim-live-latex-preview'
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'junegunn/goyo.vim'
     Plug 'mboughaba/i3config.vim'
     
@@ -50,9 +50,9 @@ nnoremap <C-H> <C-W><C-h>
 
 "" Navigating with guides:
 "" Double-press semicolon in any mode to jump to the next guide
-inoremap ;; <Esc>/<++><Enter>"_c4l
-vnoremap ;; <Esc>/<++><Enter>"_c4l
-map ;; <Esc>/<++><Enter>"_c4l
+inoremap ;; <Esc>/<++><CR>"_c4l
+vnoremap ;; <Esc>/<++><CR>"_c4l
+map ;; <Esc>/<++><CR>"_c4l
 
 "" Better indendation of code blocks
 vnoremap < <gv
@@ -129,24 +129,50 @@ let g:netrw_winsize = 15        " Netrw takes up 15% of the current split
 let g:netrw_browse_split = 2    " Opened files go to new vertical split
 "}}}
 
-" Tex File Autocommands {{{
+" Tex File Specific Commands {{{
+"" Use Zathura for PDF preview
+let g:livepreview_previewer="zathura"
+
 augroup latex_code_snippets
+    " Clear any previously loaded autocommands,
+    " only want to use the ones defined here.
     autocmd!
-    autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i|
-        \ inoremap ;bf \textbf{}<++><Esc>T{i|
-        \ inoremap ;it \textit{}<++><Esc>T{i|
-        \ inoremap ;ct \textcite{}<++><Esc>T{i|
-        \ inoremap ;cc \cite{}<++><Esc>T{i|
-        \ inoremap ;cp \parencite{}<++><Esc>T{i|
-        \ inoremap ;ref \ref{}<++><Esc>T{i|
-        \ inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i|
-        \ inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i|
-        \ inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i|
-        \ inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0/DELRN<Enter>cgn|
-        \ inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>|
-        \ inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>|
-        \ set spell|
-        \ set wrap
+
+    " Settings
+    "" Setlocal settings only affect local buffer,
+    "" won't affect open buffers that aren't .tex filetype
+    autocmd FileType tex setlocal spell|
+    \ setlocal wrap|
+    \ setlocal foldmethod=marker|
+    \ setlocal foldlevel=0
+
+    " Key mappings{{{
+    "" <buffer> so that remaps only affects the local buffer.
+    "" Snippets
+    """ Basic latex template
+    autocmd FileType tex inoremap <buffer> ;temp <ESC>:.-1r ~/snips/latex/template<CR>
+
+    "" Text emphasis
+    autocmd FileType tex inoremap <buffer> ;bf \textbf{}<++><Esc>F}i|
+    \ inoremap <buffer> ;em \emph{}<++><Esc>F}i|
+    \ inoremap <buffer> ;it \textit{}<++><Esc>F}i
+
+    "" Citations
+    autocmd FileType tex inoremap <buffer> ;ct \textcite{}<++><Esc>F}i|
+    \ inoremap <buffer> ;cc \cite{}<++><Esc>F}i|
+    \ inoremap <buffer> ;cp \parencite{}<++><Esc>F}i|
+    \ inoremap <buffer> ;ref \ref{}<++><Esc>F}i
+
+    "" Sections
+    autocmd FileType tex inoremap <buffer> ;sec \section{}<CR><CR><++><Esc>2kf}i|
+    \ inoremap <buffer> ;ssec \subsection{}<CR><CR><++><Esc>2kf}i|
+    \ inoremap <buffer> ;sssec \subsubsection{}<CR><CR><++><Esc>2kf}i
+
+    " Lists
+    autocmd FileType tex inoremap <buffer> ;ul \begin{itemize}<CR><CR>\end{itemize}<CR><CR><++><Esc>3kA\item<Space>|
+    \ inoremap <buffer> ;ol \begin{enumerate}<CR><CR>\end{enumerate}<CR><CR><++><Esc>3kA\item<Space>
+    "}}}
+
 augroup END
 " }}}
 
