@@ -1,10 +1,10 @@
 \documentclass{<++>}
 
-% Preamble{{{
+% Preamble
 \title{<++>}
 \author{<++>}
-%}}}
 
 \begin{document}
+<++>
 
 \end{document}
