@@ -17,6 +17,9 @@ alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 ## Personal script directory
 alias sc='cd ~/.dotfiles/bin/bin/scripts'
 
+## Command aliases
+function mydir(){ mkdir -p "$1" && cd "$1"; }
+
 
 # $PATH Additions
 ## Personal bash scripts
