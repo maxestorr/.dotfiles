@@ -165,7 +165,7 @@ let g:netrw_winsize = 15        " Netrw takes up 15% of the current split
 let g:netrw_browse_split = 2    " Opened files go to new vertical split
 "}}}
 
-" Autocommands for text, latex, and markdown files {{{
+" Markdown File Specific Commands {{{
 augroup markdown_prose
     " Clear all previous autocommands
     autocmd!
@@ -187,7 +187,7 @@ augroup latex_prose
     " Clear all previous autocommands
     autocmd!
     " 'setlocal' ensures this autocmd won't affect other buffers
-    autocmd FileType text,plaintex,markdown
+    autocmd FileType tex
         \ setlocal spell |
         \ setlocal wrap |
         \ setlocal foldmethod=marker |
