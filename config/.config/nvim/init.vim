@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged/')
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'junegunn/goyo.vim'
     Plug 'mboughaba/i3config.vim'
+    Plug 'jpalardy/vim-slime'
     
     " Colour Schemes
     Plug 'morhetz/gruvbox'
@@ -157,13 +158,17 @@ set dir=~/.cache/vim/swaps
 set undodir=~/.cache/vim/undodir
 " }}}
 
-" Netrw Settings {{{
+" Plugin Settings {{{
+"" Netrw
 "" This is Vim's built-in file explorer
 let g:netrw_banner = 0          " Hide the banner in netrw file explorer
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 15        " Netrw takes up 15% of the current split
 let g:netrw_browse_split = 2    " Opened files go to new vertical split
-"}}}
+
+"" Vim-Slime
+""let g:slime_target = "vimterminal"
+" }}}
 
 " Markdown File Specific Commands {{{
 augroup markdown_prose
