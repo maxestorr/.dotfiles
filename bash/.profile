@@ -16,9 +16,20 @@ alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
 
 ## Personal script directory
 alias sc='cd ~/.dotfiles/bin/bin/scripts'
+alias cx='chmod +x'
 
 ## Command aliases
-function mydir(){ mkdir -p "$1" && cd "$1"; }
+function mydir() { mkdir -p "$1" && cd "$1"; }
+
+function c() {
+    if [ $# -eq 0 ] ; then
+        clear
+    elif [ -d "$1" ] ; then
+        cd "$1"
+    elif [ -f "$1" ] ; then
+        cat "$1"
+    fi
+}
 
 
 # $PATH Additions
