@@ -167,7 +167,7 @@ let g:netrw_winsize = 15        " Netrw takes up 15% of the current split
 let g:netrw_browse_split = 2    " Opened files go to new vertical split
 
 "" Vim-Slime
-""let g:slime_target = "vimterminal"
+let g:slime_target = "neovim"
 " }}}
 
 " Markdown File Specific Commands {{{
