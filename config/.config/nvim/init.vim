@@ -168,6 +168,7 @@ let g:netrw_browse_split = 2    " Opened files go to new vertical split
 
 "" Vim-Slime
 let g:slime_target = "neovim"
+let g:slime_python_ipython = 1
 " }}}
 
 " Markdown File Specific Commands {{{
