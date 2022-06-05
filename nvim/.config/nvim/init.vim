@@ -66,7 +66,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Tab to fold code blocks
-nnoremap <tab> za
+"nnoremap <tab> za
 
 " jk to exit to normal mode.
 " J is the least used letter in the English alphabet,
@@ -164,6 +164,7 @@ set undoreload=1000
 
 " Undo and Swap files stored in hidden file
 set dir=~/.cache/vim/swaps
+set noswapfile
 set undodir=~/.cache/vim/undodir
 " }}}
 
@@ -179,10 +180,10 @@ let g:netrw_browse_split = 4    " Opened files go to new vertical split
 let g:netrw_keepdir = 0
 
 " Autostart netrw on nvim start
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Sex!
+"augroup END
 
 " Vim-Slime
 " Todo: Doesn't work well with WSL2, maybe target a tmux session instead
