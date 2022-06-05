@@ -44,33 +44,27 @@ let g:airline_theme='gruvbox'
 
 " Key Mappings {{{
 " Leader and easier to access command mode
-let mapleader = "\<Space>"
+let mapleader = " "
 map ; :
-" }}}
+nnoremap <leader><CR> :source $MYVIMRC<CR>
 
-" Key Remapping {{{
 " Cntrl + vim directional key to navigate splits
 nnoremap <C-J> <C-W><C-j>
 nnoremap <C-K> <C-W><C-k>
 nnoremap <C-L> <C-W><C-l>
 nnoremap <C-H> <C-W><C-h>
 
-" Navigating with guides:
-" Double-press semicolon in any mode to jump to the next guide
-"inoremap ;; <Esc>/<++><CR>"_c4l
-"vnoremap ;; <Esc>/<++><CR>"_c4l
-"map ;; <Esc>/<++><CR>"_c4l
+" Sensible yank, search, and join
+nnoremap Y yg$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z 
 
 " Easier method for indenting visual selections
 vnoremap < <gv
 vnoremap > >gv
 
-" Tab to fold code blocks
-"nnoremap <tab> za
-
-" jk to exit to normal mode.
-" J is the least used letter in the English alphabet,
-" so this mapping won't often affect normal keyboard use.
+" jk to exit insert mode
 inoremap jk <esc>
 " }}}
 
@@ -97,12 +91,12 @@ highlight NonText ctermbg=none
 
 " Whenever color scheme is set, re-apply the above settings. Useful for when
 " exiting GoYo resets these UI settings.
-augroup fix_colors
-    autocmd!
-    " When calling colorscheme, also run these commands
-    autocmd ColorScheme * highlight Normal ctermbg=none |
-                        \ highlight NonText ctermbg=none
-augroup END
+"augroup fix_colors
+"    autocmd!
+"    " When calling colorscheme, also run these commands
+"    autocmd ColorScheme * highlight Normal ctermbg=none |
+"                        \ highlight NonText ctermbg=none
+"augroup END
 
 " Misc.
 set nowrap              " Don't wrap lines automatically
@@ -113,8 +107,8 @@ set colorcolumn=80
 set noerrorbells
 set showmatch
 set encoding=utf-8
-set scrolloff=8         " Keep a minimum of 3 rows visible below cursor
-set sidescrolloff=8     " Keep a minimum of 5 columns visible beside cursor
+set scrolloff=8         " Keep a minimum of 8 rows visible below cursor
+set sidescrolloff=8     " Keep a minimum of 8 columns visible beside cursor
 
 " Make spellcheck underline instead of discolour
 function! s:SetSpellcheckColours()
@@ -139,6 +133,8 @@ set expandtab                   " Tab button types spaces
 " Misc.
 set mouse=a                     " Enable mouse scrolling
 set clipboard=unnamedplus       " Share yank buffer with system clipboard
+set ignorecase
+set smartcase
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
@@ -154,9 +150,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-" }}}
 
-" Undo and Swap File Settings {{{
 " Undo command persists even after session-end
 set undofile
 set undolevels=1000
@@ -164,7 +158,6 @@ set undoreload=1000
 
 " Undo and Swap files stored in hidden file
 set dir=~/.cache/vim/swaps
-set noswapfile
 set undodir=~/.cache/vim/undodir
 " }}}
 
