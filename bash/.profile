@@ -7,12 +7,14 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # Aliases
 ## Config shortcuts
 alias e='nvim'
+alias cf='cd ~/.dotfiles/'
 alias ccf='e ~/.dotfiles/compton/.config/compton.conf'
 alias vcf='e ~/.dotfiles/nvim/.config/nvim/init.vim'
 alias icf='e ~/.dotfiles/i3/.config/i3/config'
 alias bcf='e ~/.dotfiles/bash/.profile'
 alias xcf='e ~/.dotfiles/Xresources/.Xresources'
 alias rcf='e ~/.dotfiles/ranger/.config/ranger/rc.conf'
+alias tb='e ~/.tmux.conf'
 
 ## Personal script directory
 alias sc='cd ~/.dotfiles/bin/bin/scripts'
