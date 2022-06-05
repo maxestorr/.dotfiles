@@ -178,11 +178,11 @@ let g:netrw_altv = 1
 let g:netrw_browse_split = 4    " Opened files go to new vertical split
 let g:netrw_keepdir = 0
 
-" Autostart Netrw on nvim start
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
+" Autostart netrw on nvim start
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 " Vim-Slime
 " Todo: Doesn't work well with WSL2, maybe target a tmux session instead
