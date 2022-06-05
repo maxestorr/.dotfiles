@@ -57,9 +57,9 @@ nnoremap <C-H> <C-W><C-h>
 
 " Navigating with guides:
 " Double-press semicolon in any mode to jump to the next guide
-inoremap ;; <Esc>/<++><CR>"_c4l
-vnoremap ;; <Esc>/<++><CR>"_c4l
-map ;; <Esc>/<++><CR>"_c4l
+"inoremap ;; <Esc>/<++><CR>"_c4l
+"vnoremap ;; <Esc>/<++><CR>"_c4l
+"map ;; <Esc>/<++><CR>"_c4l
 
 " Easier method for indenting visual selections
 vnoremap < <gv
