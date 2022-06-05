@@ -6,13 +6,13 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Aliases
 ## Config shortcuts
-alias cf='cd ~/.dotfiles/'
-alias ccf='vim ~/.dotfiles/config/.config/compton.conf'
-alias vcf='vim ~/.dotfiles/config/.config/nvim/init.vim'
-alias icf='vim ~/.dotfiles/config/.config/i3/config'
-alias bcf='vim ~/.dotfiles/bash/.profile'
-alias xcf='vim ~/.dotfiles/Xresources/.Xresources'
-alias rcf='vim ~/.dotfiles/config/.config/ranger/rc.conf'
+alias e='nvim'
+alias ccf='e ~/.dotfiles/compton/.config/compton.conf'
+alias vcf='e ~/.dotfiles/nvim/.config/nvim/init.vim'
+alias icf='e ~/.dotfiles/i3/.config/i3/config'
+alias bcf='e ~/.dotfiles/bash/.profile'
+alias xcf='e ~/.dotfiles/Xresources/.Xresources'
+alias rcf='e ~/.dotfiles/ranger/.config/ranger/rc.conf'
 
 ## Personal script directory
 alias sc='cd ~/.dotfiles/bin/bin/scripts'
@@ -119,13 +119,13 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\w\a\n> "
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\w\a\n> "
+#    ;;
+#*)
+#    ;;
+#esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
