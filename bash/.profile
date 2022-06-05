@@ -14,7 +14,7 @@ alias icf='e ~/.dotfiles/i3/.config/i3/config'
 alias bcf='e ~/.dotfiles/bash/.profile'
 alias xcf='e ~/.dotfiles/Xresources/.Xresources'
 alias rcf='e ~/.dotfiles/ranger/.config/ranger/rc.conf'
-alias tb='e ~/.tmux.conf'
+alias tcf='e ~/.tmux.conf'
 
 ## Personal script directory
 alias sc='cd ~/.dotfiles/bin/bin/scripts'
