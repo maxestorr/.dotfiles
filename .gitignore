@@ -1,1 +1,3 @@
-bin/bin/cht.sh
+*.netrwhist
+*autoload/
+*plugged/
