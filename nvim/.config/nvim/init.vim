@@ -98,11 +98,14 @@ endif
 " Begin plugins
 call plug#begin('~/.config/nvim/plugged/')
 
+source ~/.config/nvim/plugins/vim-surround.vim
+source ~/.config/nvim/plugins/vim-commentary.vim
+
 source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/vim-airline.vim
-source ~/.config/nvim/plugins/vim-surround.vim
 source ~/.config/nvim/plugins/vim-slime.vim
 source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/fzf.vim
 
 call plug#end()
 doautocmd User PlugLoaded
