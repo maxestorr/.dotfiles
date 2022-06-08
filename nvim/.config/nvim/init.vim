@@ -15,7 +15,6 @@
 "--------------------------------------------------------------------------
 
 set mouse=a
-set background=dark
 set number
 set relativenumber
 set splitright
@@ -41,7 +40,6 @@ filetype on
 filetype plugin on
 syntax on
 
-set path+=**
 set hidden
 set wildmode=longest:full,full
 set signcolumn=yes:2
@@ -53,6 +51,7 @@ set signcolumn=yes:2
 " Leader and easier to access command mode
 let mapleader = "\<space>"
 nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
+nmap <leader>vc :edit ~/.config/nvim/plugins/coc.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 nmap <leader>k :nohlsearch<CR>
 
@@ -101,11 +100,10 @@ call plug#begin('~/.config/nvim/plugged/')
 
 source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/vim-airline.vim
+source ~/.config/nvim/plugins/vim-airline-themes.vim
 source ~/.config/nvim/plugins/vim-surround.vim
 source ~/.config/nvim/plugins/vim-slime.vim
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-"Plug 'junegunn/goyo.vim'
-"Plug 'mboughaba/i3config.vim'
+source ~/.config/nvim/plugins/coc.vim
 
 call plug#end()
 doautocmd User PlugLoaded
@@ -116,8 +114,8 @@ doautocmd User PlugLoaded
 "--------------------------------------------------------------------------
 
 " Stop colourscheme from altering terminal opacity settings
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+"highlight Normal ctermbg=none
+"highlight NonText ctermbg=none
 
 " Netrw settings
 let g:netrw_banner = 0          " Hide the banner in netrw file explorer
