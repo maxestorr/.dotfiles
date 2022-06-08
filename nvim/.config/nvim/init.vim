@@ -11,34 +11,10 @@
 " Author: maxestorr@github.com
 
 "--------------------------------------------------------------------------
-" Plugins
-"--------------------------------------------------------------------------
-
-" Auto-installation for vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Begin plugins
-call plug#begin('~/.config/nvim/plugged/')
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'tpope/vim-surround'
-    "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-    "Plug 'junegunn/goyo.vim'
-    "Plug 'mboughaba/i3config.vim'
-    Plug 'jpalardy/vim-slime'
-    
-    " Colour Schemes
-    Plug 'morhetz/gruvbox'
-call plug#end()
-
-"--------------------------------------------------------------------------
 " General settings
 "--------------------------------------------------------------------------
 
+set mouse=a
 set background=dark
 set number
 set relativenumber
@@ -64,7 +40,6 @@ set undodir=~/.cache/vim/undodir
 filetype on
 filetype plugin on
 syntax on
-colorscheme gruvbox
 
 set path+=**
 set hidden
@@ -79,6 +54,7 @@ set signcolumn=yes:2
 let mapleader = "\<space>"
 nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
+nmap <leader>k :nohlsearch<CR>
 
 " Cntrl + vim directional key to navigate splits
 nnoremap <C-J> <C-W><C-j>
@@ -91,20 +67,53 @@ nnoremap <C-H> <C-W><C-h>
 nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap J mzJ`z 
+nnoremap J mzJ`z
 vnoremap < <gv
 vnoremap > >gv
 
 " jk to exit insert mode
 inoremap jk <esc>
 
+" When text is wrapped, move by terminal rows lines, unless a count is provided
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" Allow gf to open non-existent files
+map gf :edit <cfile><cr>
+
+" Maintain the cursor position when yanking a visual selection
+vnoremap y myy`y
+vnoremap Y myY`y
+
+"--------------------------------------------------------------------------
+" Plugins
+"--------------------------------------------------------------------------
+
+" Auto-installation for vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Begin plugins
+call plug#begin('~/.config/nvim/plugged/')
+
+source ~/.config/nvim/plugins/gruvbox.vim
+source ~/.config/nvim/plugins/vim-airline.vim
+source ~/.config/nvim/plugins/vim-surround.vim
+source ~/.config/nvim/plugins/vim-slime.vim
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"Plug 'junegunn/goyo.vim'
+"Plug 'mboughaba/i3config.vim'
+
+call plug#end()
+doautocmd User PlugLoaded
+
+
 "--------------------------------------------------------------------------
 " Miscellaneous
 "--------------------------------------------------------------------------
-
-" Airline theme
-let g:airline_theme='gruvbox'
-set noshowmode
 
 " Stop colourscheme from altering terminal opacity settings
 highlight Normal ctermbg=none
