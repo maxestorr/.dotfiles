@@ -7,6 +7,7 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # Aliases
 ## Config shortcuts
 alias e='nvim'
+alias vim='nvim'
 alias cf='cd ~/.dotfiles/'
 alias ccf='e ~/.dotfiles/compton/.config/compton.conf'
 alias vcf='e ~/.dotfiles/nvim/.config/nvim/init.vim'
