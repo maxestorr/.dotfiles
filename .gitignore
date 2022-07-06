@@ -2,3 +2,6 @@
 *autoload/
 *plugged/
 *coc/
+*wslu/
+*nvim/.config/configstore
+
