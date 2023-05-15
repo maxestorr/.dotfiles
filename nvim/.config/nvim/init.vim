@@ -98,8 +98,11 @@ endif
 " Begin plugins
 call plug#begin('~/.config/nvim/plugged/')
 
-source ~/.config/nvim/plugins/vim-surround.vim
-source ~/.config/nvim/plugins/vim-commentary.vim
+" source ~/.config/nvim/plugins/vim-surround.vim
+" source ~/.config/nvim/plugins/vim-commentary.vim
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 
 source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/vim-airline.vim
