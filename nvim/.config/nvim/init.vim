@@ -30,7 +30,7 @@ set colorcolumn=80
 set noerrorbells
 set ignorecase
 set smartcase
-set clipboard=unnamedplus 
+"set clipboard=unnamedplus " Started disliking this setting
 set undofile
 set undolevels=1000
 set undoreload=1000
