@@ -10,6 +10,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeShowLineNumbers=1
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
+autocmd FileType nerdtree setlocal signcolumn=no
 
 let g:NERDTreeDirArrowExpandable = '▹'
 let g:NERDTreeDirArrowCollapsible = '▿'
