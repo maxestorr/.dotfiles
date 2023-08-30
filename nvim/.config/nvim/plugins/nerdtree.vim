@@ -6,6 +6,11 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+
 let g:NERDTreeDirArrowExpandable = '▹'
 let g:NERDTreeDirArrowCollapsible = '▿'
 
