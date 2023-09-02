@@ -1,4 +1,35 @@
-# .bashrc from /etc/skel/.bashrc slighlty modified 2023-09-02
+# ~/.bashrc
+# Sourced on interactive shells, needs to be manually sourced otherwise
+# Good for adding aliases and changing bash settings
+# Personal additions
+
+# Aliases
+alias e='nvim'
+alias vim='nvim'
+alias cx='chmod +x'
+
+# Command aliases
+function mydir() { mkdir -p "$1" && cd "$1"; }
+
+function c() {
+    if [ $# -eq 0 ] ; then
+        clear
+    elif [ -d "$1" ] ; then
+        cd "$1"
+    elif [ -f "$1" ] ; then
+        cat "$1"
+    fi
+}
+
+# Activate Vim keybindings
+set -o vi
+
+
+# Pywal settings
+## Import colorscheme from 'wal' asynchronously
+## (cat ~/.cache/wal/sequences &)
+
+# .bashrc from /etc/skel/.bashrc 
 #
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -119,13 +150,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi

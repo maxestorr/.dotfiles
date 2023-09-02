@@ -1,5 +1,6 @@
-# Bash Profile
-# Author: Max Storr
+# ~/.profile
+# Sourced by multiple shell clients including bash on login
+# Should set env variables here you want inherited by all programs
 
 # Environment variables
 export XDG_DATA_HOME=$HOME/.local/share
@@ -8,36 +9,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_RUNTIME_DIR=/run/user/$UID
 
-# Aliases
-## Config shortcuts
-alias e='nvim'
-alias vim='nvim'
-alias cf='cd ~/.dotfiles/'
-alias ccf='e ~/.dotfiles/compton/.config/compton.conf'
-alias vcf='e ~/.dotfiles/nvim/.config/nvim/init.vim'
-alias icf='e ~/.dotfiles/i3/.config/i3/config'
-alias bcf='e ~/.dotfiles/bash/.profile'
-alias xcf='e ~/.dotfiles/Xresources/.Xresources'
-alias rcf='e ~/.dotfiles/ranger/.config/ranger/rc.conf'
-alias tcf='e ~/.tmux.conf'
-
-## Personal script directory
-alias sc='cd ~/.dotfiles/bin/bin/scripts'
-alias cx='chmod +x'
-
-## Command aliases
-function mydir() { mkdir -p "$1" && cd "$1"; }
-
-function c() {
-    if [ $# -eq 0 ] ; then
-        clear
-    elif [ -d "$1" ] ; then
-        cd "$1"
-    elif [ -f "$1" ] ; then
-        cat "$1"
-    fi
-}
-
+export EDITOR=nvim
 
 # $PATH Additions
 ## Personal bash scripts
@@ -47,12 +19,23 @@ export PATH="$PATH:$HOME/bin/colour_scripts/"
 export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin/"
 export PATH="$PATH:/opt/mssql-tools18/bin"
 
+# .profile default from /etc/skel/.profile
+# Need to source .bashrc
 
-# Activate Vim keybindings
-set -o vi
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 
-# Pywal settings
-## Import colorscheme from 'wal' asynchronously
-## (cat ~/.cache/wal/sequences &)
-
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
