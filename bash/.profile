@@ -11,14 +11,6 @@ export XDG_RUNTIME_DIR=/run/user/$UID
 
 export EDITOR=nvim
 
-# $PATH Additions
-## Personal bash scripts
-export PATH="$PATH:$HOME/bin/scripts"
-export PATH="$PATH:$HOME/bin/colour_scripts/"
-## Add vim-live-latex-preview binaries for live latex compiling
-export PATH="$PATH:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin/"
-export PATH="$PATH:/opt/mssql-tools18/bin"
-
 # .profile default from /etc/skel/.profile
 # Need to source .bashrc
 
@@ -39,3 +31,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# $PATH Additions
+export PATH="$PATH:/opt/mssql-tools18/bin"
+

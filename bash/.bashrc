@@ -6,6 +6,8 @@
 # Aliases
 alias e='nvim'
 alias vim='nvim'
+alias cat='batcat'
+
 alias cx='chmod +x'
 
 # Command aliases
@@ -15,7 +17,7 @@ function c() {
     if [ $# -eq 0 ] ; then
         clear
     elif [ -d "$1" ] ; then
-        cd "$1"
+        cd "$1" && ls
     elif [ -f "$1" ] ; then
         cat "$1"
     fi
