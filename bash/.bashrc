@@ -30,8 +30,8 @@ function c() {
 }
 
 nvims() {
-	items=("default" "lazyvim" "kickstartvim" "ratvim")
-	config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=50% --layout=reverse --border --exit-0)
+	items=("default" "lazyvim" "mstorr.nvim")
+	config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=50% --layout=reverse --border --exit-0)
 	if [[ -z $config ]]; then
 		echo "Nothing selected"
 		return 0
