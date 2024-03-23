@@ -1,3 +1,3 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = https://github.com/maxestorr/mstorr.nvim
+	url = git@github.com:maxestorr/mstorr.nvim.git
