@@ -6,3 +6,5 @@
 *nvim/.config/configstore
 
 nvim/.config/lazygit
+**/__pycache__
+**/*.log
