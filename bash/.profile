@@ -10,7 +10,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_RUNTIME_DIR=/run/user/$UID
 
 export EDITOR=nvim
-export NVIM_APPNAME=mstorr.nvim
+export NVIM_APPNAME=nvim
 
 # .profile default from /etc/skel/.profile
 # Need to source .bashrc
