@@ -8,3 +8,6 @@
 nvim/.config/lazygit
 **/__pycache__
 **/*.log
+bin/.local/state
+bin/.local/share
+bin/.local/.npm-global
