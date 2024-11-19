@@ -36,3 +36,5 @@ fi
 # $PATH Additions
 export PATH="$PATH:/opt/mssql-tools18/bin"
 
+
+. "$HOME/.local/share/../bin/env"

@@ -168,9 +168,12 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # WSLU enable opening browser from terminal
 export DISPLAY=:0
 export BROWSER=/usr/bin/wslview
+
+# python uv
+. "$HOME/.local/share/../bin/env"
