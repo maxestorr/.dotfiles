@@ -7,8 +7,8 @@
 alias e='nvim'
 alias vim='nvim'
 alias cat='batcat'
-
 alias cx='chmod +x'
+alias tf='terraform'
 
 # some more ls aliases
 alias ll='exa -la'
