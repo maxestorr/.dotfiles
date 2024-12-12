@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# FIX: After using clone-bare to clone a repo, new branches don't appear to update properly
+# and throw a git error
 set -e
 
 # Examples of call:
