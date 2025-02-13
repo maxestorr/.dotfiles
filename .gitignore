@@ -11,3 +11,5 @@ nvim/.config/lazygit
 bin/.local/state
 bin/.local/share
 bin/.local/.npm-global
+
+.dS_Store
