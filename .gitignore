@@ -14,3 +14,4 @@ bin/.local/.npm-global
 
 .dS_Store
 tmux/.config/tmux/plugins/tpm/
+tmux/.config/tmux/plugins/
