@@ -1,19 +1,12 @@
-# ~/.profile
-# Sourced by multiple shell clients including bash on login
-# Should set env variables here you want inherited by all programs
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
 
-# Environment variables
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_RUNTIME_DIR=/run/user/$UID
-
-export EDITOR=nvim
-export NVIM_APPNAME=nvim
-
-# .profile default from /etc/skel/.profile
-# Need to source .bashrc
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -32,9 +25,3 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-# $PATH Additions
-export PATH="$PATH:/opt/mssql-tools18/bin"
-
-
-. "$HOME/.local/share/../bin/env"
