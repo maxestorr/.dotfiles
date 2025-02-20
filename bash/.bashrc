@@ -174,6 +174,3 @@ eval "$(pyenv init -)"
 # WSLU enable opening browser from terminal
 export DISPLAY=:0
 export BROWSER=/usr/bin/wslview
-
-# python uv
-. "$HOME/.local/share/../bin/env"
