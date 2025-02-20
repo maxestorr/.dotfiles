@@ -12,8 +12,8 @@ fi
 BACKUP_DIR="$HOME/dotfiles-backup-$(date +%F-%T)"
 mkdir -p "$BACKUP_DIR"
 
-echo "Backing up existing dotfiles to $BACKUP_DIR..."
-rsync -av --progress "$HOME"/.??* "$BACKUP_DIR/" --exclude ".git" --exclude ".config" --exclude "dotfiles-backup-*"
+# echo "Backing up existing dotfiles to $BACKUP_DIR..."
+# rsync -av --progress "$HOME"/.??* "$BACKUP_DIR/" --exclude ".git" --exclude ".config" --exclude "dotfiles-backup-*"
 
 # Adopt existing system files before stowing
 for dir in "$DOTFILES_DIR"/*; do
@@ -32,4 +32,5 @@ git restore .
 #     fi
 # done
 
-echo "Dotfiles successfully stowed. Backup of old dotfiles is in $BACKUP_DIR."
+# echo "Dotfiles successfully stowed. Backup of old dotfiles is in $BACKUP_DIR."
+echo "Dotfiles successfully stowed."
