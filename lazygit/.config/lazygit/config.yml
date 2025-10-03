@@ -1,0 +1,11 @@
+customCommands:
+  - key: 'n'
+    prompts:
+      - type: 'input'
+        title: 'Commit Message --no-verify'
+        initialValue: ''
+    command: git commit -m '{{index .PromptResponses 0}}' --no-verify
+    context: 'files'
+    output: log
+    description: 'Commit and skip pre-commit hooks with --no-verify'
+    outputTitle: 'Commit --no-verify'
