@@ -18,6 +18,7 @@ alias l='exa'
 
 # Command aliases
 function mydir() { mkdir -p "$1" && cd "$1"; }
+alias m='mydir'
 
 function c() {
 	if [ $# -eq 0 ]; then
@@ -170,7 +171,13 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # WSLU enable opening browser from terminal
 export DISPLAY=:0
 export BROWSER=/usr/bin/wslview
+
+. "$HOME/.local/share/../bin/env"
+
+# Think this was from snow cli completion but it spams every bash start
+# source '/home/max/.bash_completions/-c.sh'

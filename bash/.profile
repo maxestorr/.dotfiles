@@ -34,3 +34,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # $PATH Additions
+
+. "$HOME/.local/share/../bin/env"
