@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Track config files
+!.gitignore
+!CLAUDE.md
+!settings.json
+!generate_api_key.sh
+
+# Track config directories (and their contents)
+!commands/
+!commands/**
+!skills/
+!skills/**
