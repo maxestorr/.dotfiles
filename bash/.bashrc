@@ -177,7 +177,7 @@ eval "$(pyenv virtualenv-init -)"
 export DISPLAY=:0
 export BROWSER=/usr/bin/wslview
 
-. "$HOME/.local/share/../bin/env"
+# . "$HOME/.local/share/../bin/env"
 
 # Think this was from snow cli completion but it spams every bash start
 # source '/home/max/.bash_completions/-c.sh'
