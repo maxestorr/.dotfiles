@@ -181,3 +181,7 @@ export BROWSER=/usr/bin/wslview
 
 # Think this was from snow cli completion but it spams every bash start
 # source '/home/max/.bash_completions/-c.sh'
+
+
+# Zscaler cert issue workaround
+export NODE_EXTRA_CA_CERTS="$HOME/.certs/zscaler-ssl-cert.pem"
