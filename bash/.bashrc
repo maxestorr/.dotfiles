@@ -9,6 +9,14 @@ alias vim='nvim'
 alias cat='batcat'
 alias cx='chmod +x'
 alias tf='terraform'
+docker() {
+	if [ "$1" = "compose" ]; then
+		shift
+		command podman-compose "$@"
+	else
+		command podman "$@"
+	fi
+}
 
 # some more ls aliases
 alias ll='exa -la'

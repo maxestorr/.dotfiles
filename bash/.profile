@@ -36,3 +36,4 @@ fi
 # $PATH Additions
 
 # . "$HOME/.local/share/../bin/env"
+export PODMAN_COMPOSE_IN_POD=false
