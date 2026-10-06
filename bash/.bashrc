@@ -173,23 +173,11 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-export PATH="$PATH:/opt/mssql-tools18/bin"
-
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# WSLU enable opening browser from terminal
-export DISPLAY=:0
-export BROWSER=/usr/bin/wslview
-
-# . "$HOME/.local/share/../bin/env"
+if command -v pyenv &>/dev/null; then
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
 
 # Think this was from snow cli completion but it spams every bash start
 # source '/home/max/.bash_completions/-c.sh'
-
-
-# Zscaler cert issue workaround
-export NODE_EXTRA_CA_CERTS="$HOME/.certs/zscaler-ssl-cert.pem"

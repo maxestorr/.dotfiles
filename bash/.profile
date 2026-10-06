@@ -12,6 +12,11 @@ export XDG_RUNTIME_DIR=/run/user/$UID
 export EDITOR=nvim
 export NVIM_APPNAME=nvim
 
+export DISPLAY=:0
+export BROWSER=/usr/bin/wslview
+export NODE_EXTRA_CA_CERTS="$HOME/.certs/zscaler-ssl-cert.pem"
+export PODMAN_COMPOSE_IN_POD=false
+
 # .profile default from /etc/skel/.profile
 # Need to source .bashrc
 
@@ -34,6 +39,9 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # $PATH Additions
+export PATH="$PATH:/opt/mssql-tools18/bin"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
 # . "$HOME/.local/share/../bin/env"
-export PODMAN_COMPOSE_IN_POD=false
